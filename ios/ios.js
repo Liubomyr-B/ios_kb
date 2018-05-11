@@ -274,17 +274,8 @@ var iosKeyboard = (function() {
 
         langsMenuCon.appendChild(langsMenu);
 
-        var svg = '<svg version="1.1" baseProfile="tiny"\n' +
-            '\t xmlns="http://www.w3.org/2000/svg"\n' +
-            '\t viewBox="-0.001 -0.25 121 133" xml:space="preserve">\n' +
-            '<defs>\n' +
-            '</defs>\n' +
-            '<path fill="#FFFFFF" d="M0.002,42.875V7.75c0,0-0.373-7.75,9.252-7.75s102.375,0,102.375,0s8.5,0.5,8.5,8.875s0,57.375,0,57.375\n' +
-            '\tv24.5c0,0,0.375,6.25-8.5,6.25s-48.625,0-51.563,0c-3.729,0-6.146,0.041-6.146,6.5c0,11.083,0,23.25,0,24.125s0.333,4.5-3.417,4.5\n' +
-            '\ts-20.526,0-21.125,0s-3.125,0.375-3.125-4.5s0-23.125,0-23.125s1.375-7.5-5.625-7.5S8.004,97,8.004,97s-8.002,1.25-8.002-6.125\n' +
-            '\tS0.002,42.875,0.002,42.875z"/>\n' +
-            '</svg>';
-        langsMenuCon.innerHTML += svg;
+        //var svg = '';
+        //langsMenuCon.innerHTML += svg;
 
         elem.appendChild(langsMenuCon);
 

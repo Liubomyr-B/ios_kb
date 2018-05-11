@@ -1,0 +1,398 @@
+
+body {
+    padding:0;
+    margin:0;
+}
+body, textarea {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+textarea {
+    font-size: 12pt;
+    padding: 5px;
+}
+/* Main styles */
+#keyboard {
+    background: #d1d5db;
+    font-size: 16px;
+    height: 26vh;
+    width: 100vw;
+    display: inline-block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.lang-mode {
+    display: none;
+}
+.lowercase, .uppercase, #numbers, #symbols {
+    z-index: 0;
+}
+.lowercase {
+    display: block;
+}
+#numbers, #symbols {
+    display: none;
+}
+.row {
+    display: flex;
+    margin: 2% 0;
+    justify-content: center;
+    height: calc((100% - 22%) / 4);
+}
+/* Third row */
+.kb-mode .row:nth-of-type(3) .gray:first-of-type {
+    flex-basis: 10%;
+    margin-right: auto;
+}
+.kb-mode .row:nth-of-type(3) .gray:last-of-type {
+    flex-basis: 10%;
+    margin-left: auto;
+}
+.kb-mode .row:nth-of-type(3) .gray:last-of-type:active {
+    background: #fff;
+}
+/* Last row */
+.kb-mode .row:last-of-type .key {
+    /*line-height: 2.7em;*/
+    /*line-height: 3em;*/
+    /*font-size: 80%;*/
+}
+.kb-mode .row:last-of-type .gray {
+    flex-grow: 1;
+}
+.kb-mode .row:last-of-type .white {
+    flex-basis: 55%;
+}
+.kb-mode .row:last-of-type .white:active {
+    background: #aaa;
+}
+.kb-mode .row:last-of-type .gray:last-of-type:active {
+    background: #fff;
+}
+/* Keys */
+.key {
+    flex: 0 0 100%;
+    flex-basis: 8%;
+    flex-shrink: 1;
+    border-radius: 5px;
+    box-shadow: 0 1px 0 #888;
+    display: inline-block;
+    line-height: 2em;
+    position: relative;
+    margin: 0 1%;
+    text-align: center;
+}
+.white {
+    background: #fff;
+    /*width: 32px;*/
+}
+.gray {
+    background: #acb3bd;
+    width: 42px;
+    color: black;
+}
+/* Key pop-out */
+.popout {
+    /* flex-basis: 10%; */
+    /* display: none; */
+    font-size: 1.5em;
+    position: absolute;
+    /* left: -25; */
+    bottom: 100%;
+    z-index: 1;
+    /* line-height: 2em; */
+    width: 120%;
+    left: 50%;
+    margin-left: -60%;
+    /* margin-top: -20px; */
+}
+/* align pop-outs for q Q 1 - [ _*/
+/*#lowercase .row:first-of-type .key:first-of-type .popout,
+#uppercase .row:first-of-type .key:first-of-type .popout,
+#numbers .row:nth-child(-n+2) .key:first-of-type .popout,
+#symbols .row:nth-child(-n+2) .key:first-of-type .popout {
+    left: 0;
+}*/
+/* align pop-outs for p P 0 " = • */
+#lowercase .row:first-of-type .key:last-of-type .popout,
+#uppercase .row:first-of-type .key:last-of-type .popout,
+#numbers .row:nth-child(-n+2) .key:last-of-type .popout,
+#symbols .row:nth-child(-n+2) .key:last-of-type .popout {
+    left: -18px;
+}
+.head {
+    background: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0 -1px 1px #888;
+    line-height: 1.5em;
+    width: 120%;
+}
+.neck {
+    background: #fff;
+    width: 120%;
+    height: 10px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+}
+/* adjust width of . , ? ! ' */
+#numbers .row:nth-child(3) .key:nth-child(n+2):nth-child(-n+6) .head,
+#symbols .row:nth-child(3) .key:nth-child(n+2):nth-child(-n+6) .head,
+#numbers .row:nth-child(3) .key:nth-child(n+2):nth-child(-n+6) .neck,
+#symbols .row:nth-child(3) .key:nth-child(n+2):nth-child(-n+6) .neck {
+    width: 64px;
+}
+/* alter necks for q Q 1 - [ _ */
+#lowercase .row:first-of-type .key:first-of-type .neck,
+#uppercase .row:first-of-type .key:first-of-type .neck,
+#numbers .row:nth-child(-n+2) .key:first-of-type .neck,
+#symbols .row:nth-child(-n+2) .key:first-of-type .neck {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 67% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 67% 100%, 0% 100%);
+}
+/* alter necks for p P 0 " [ = • */
+#lowercase .row:first-of-type .key:last-of-type .neck,
+#uppercase .row:first-of-type .key:last-of-type .neck,
+#numbers .row:nth-child(-n+2) .key:last-of-type .neck,
+#symbols .row:nth-child(-n+2) .key:last-of-type .neck {
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 33% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 33% 100%);
+}
+
+
+.langs-menu {
+    background-color: #fff;
+    position: absolute;
+    width: 40vw;
+    top: -150%;
+    padding: 0;
+    z-index: 1;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    -webkit-border-radius : 5px;
+    -moz-border-radius : 5px;
+    overflow: hidden;
+}
+.langs-menu ul {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.langs-menu ul li{
+    list-style-type: none;
+    margin: 0;
+}
+.langs-menu ul li:active, .langs-menu ul li.active {
+    background-color: #027cfe;
+    color: #fff;
+}
+
+.after-langs {
+    width: 100%;
+    height: 105%;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    box-shadow: 0 5px 5px -5px #333;
+    border-radius: 5px;
+    -webkit-border-radius : 5px;
+    -moz-border-radius : 5px;
+}
+
+
+/* ----------- iPhone 4 and 4S ----------- */
+/*
+@media only screen
+and (min-device-width: 320px)
+and (min-device-width: 320px)
+and (max-device-height: 320px)
+and (orientation: portrait) {
+    #keyboard {
+        font-size: 16px;
+        height: 26vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 2% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+}*/
+
+/* ----------- iPhone 5, 5S, 5C and 5SE ----------- */
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (max-device-height: 320px)
+and (orientation: portrait) {
+    #keyboard {
+        font-size: 16px;
+        height: 26vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 2% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+    .key {
+         line-height: 1.8em;
+     }
+}
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 568px)
+and (orientation: landscape) {
+    #keyboard {
+        font-size: 16px;
+        height: 38vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 1% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+    .key {
+        line-height: 1.5em;
+    }
+}
+/* ----------- iPhone 6, 6S, 7 and 8 ----------- */
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (max-device-height: 375px)
+and (orientation: portrait) {
+        #keyboard {
+            font-size: 16px;
+            height: 26vh;
+            width: 100vw;
+        }
+        .row {
+            display: flex;
+            margin: 2% 0;
+            justify-content: center;
+            height: calc((100% - 22%) / 4);
+        }
+        .key {
+            line-height: 2em;
+        }
+}
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 667px)
+and (orientation: landscape) {
+        #keyboard {
+            font-size: 16px;
+            height: 38vh;
+            width: 100vw;
+        }
+        .row {
+            display: flex;
+            margin: 1% 0;
+            justify-content: center;
+            height: calc((100% - 22%) / 4);
+        }
+    }
+
+}
+
+
+/* ----------- iPhone 6+, 7+ and 8+ ----------- */
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (orientation: portrait) {
+    #keyboard {
+        font-size: 16px;
+        height: 26vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 2% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+    .key {
+        line-height: 2em;
+    }
+}
+
+@media only screen
+and (min-device-width: 414px)
+and (max-device-width: 736px)
+and (orientation: landscape) {
+    #keyboard {
+        font-size: 16px;
+        height: 38vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 1% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+    .key {
+        line-height: 1.8em;
+    }
+}
+
+
+/* ----------- iPhone X ----------- */
+
+@media only screen
+and (min-device-width: 375px)
+and (max-device-width: 812px)
+and (min-device-height: 812px)
+and (-webkit-device-pixel-ratio : 3)
+and (orientation: portrait) {
+    #keyboard {
+        font-size: 16px;
+        height: 28vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 3% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+    .key {
+        line-height: 3em;
+    }
+}
+
+
+@media only screen
+and (min-device-width: 812px)
+and (min-device-height: 375px)
+and (-webkit-device-pixel-ratio : 3)
+and (orientation: landscape) {
+    #keyboard {
+        font-size: 16px;
+        height: 45vh;
+        width: 100vw;
+    }
+    .row {
+        display: flex;
+        margin: 1% 0;
+        justify-content: center;
+        height: calc((100% - 22%) / 4);
+    }
+    .key {
+        line-height: 1.8em;
+    }
+}

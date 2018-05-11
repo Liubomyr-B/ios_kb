@@ -1,0 +1,45 @@
+{
+  "letters": {
+    "en": {
+      "lowercase": [
+        [ "q", "w", "e", "r", "t", "y", "u", "i", "o", "p"],
+        [ "a", "s", "d", "f", "g", "h", "j", "k", "l"],
+        [{"char": "&#8679;", "class": "key gray shift"}, "z", "x", "c", "v", "b", "n", "m", {"char": "&#9003;", "class": "key gray backspace"}],
+        [{"label": "123", "class": "key gray numbers-mode"}, {"label": "🌐", "class": "key gray lang-mode"}, {"char": "&#32;", "label": "space", "class": "key white space"}, {"label": "return", "class": "key gray return"}]
+      ],
+      "uppercase": [
+        [ "Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
+        [ "A", "S", "D", "F", "G", "H", "J", "K", "L"],
+        [{"char": "&#8679;", "class": "key gray shift"}, "Z", "X", "C", "V", "B", "N", "M", {"char": "&#9003;", "class": "key gray backspace"}],
+        [{"label": "123", "class": "key gray numbers-mode"}, {"label": "🌐", "class": "key gray lang-mode"}, {"char": "&#32;", "label": "space", "class": "key white space"}, {"label": "return", "class": "key gray return"}]
+      ]
+    },
+    "ru": {
+      "lowercase": [
+        [ "й", "ц", "у", "к", "е", "н", "г", "ш", "щ", "з", "х"],
+        [ "ф", "ы", "в", "а", "п", "р", "о", "л", "д", "ж", "э"],
+        [{"char": "&#8679;", "class": "key gray shift"}, "я", "ч", "с", "м", "и", "т", "ь", "б", "ю", {"char": "&#9003;", "class": "key gray backspace"}],
+        [{"label": "123", "class": "key gray numbers-mode"}, {"label": "🌐", "class": "key gray lang-mode"}, {"char": "&#32;", "label": "space", "class": "key white space"}, {"label": "return", "class": "key gray return"}]
+      ],
+      "uppercase": [
+        [ "Й", "Ц", "У", "К", "Е", "Н", "Г", "Ш", "Щ", "З", "Х"],
+        [ "Ф", "Ы", "В", "А", "П", "Р", "О", "Л", "Д", "Ж", "Э"],
+        [{"char": "&#8679;", "class": "key gray shift"}, "Я", "Ч", "С", "М", "И", "Т", "Ь", "Б", "Ю", {"char": "&#9003;", "class": "key gray backspace"}],
+        [{"label": "123", "class": "key gray numbers-mode"}, {"label": "🌐", "class": "key gray lang-mode"}, {"char": "&#32;", "label": "space", "class": "key white space"}, {"label": "return", "class": "key gray return"}]
+      ]
+    }
+  },
+  "numbers": [
+    [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"],
+    [ "-", "\/", ":", ";", "(", ")", "$", "&", "@", "\""],
+    [{"char": "#+=", "class": "key gray symbols-mode"}, ".", ",", "?", "!", "'", {"char": "&#9003;", "class": "key gray backspace"}],
+    [{"label": "ABC", "class": "key gray letters-mode"}, {"label": "🌐", "class": "key gray lang-mode"}, {"char": "&#32;", "label": "space", "class": "key white space"}, {"label": "return", "class": "key gray return"}]
+  ],
+  "symbols": [
+    [ "[", "]", "{", "}", "#", "%", "^", "*", "+", "="],
+    [ "_", "\\", "|", "~", "<", ">", "€", "£", "¥", "•"],
+    [ {"label": "123", "class": "key gray numbers-mode"}, ".", ",", "?", "!", "'", {"char": "&#9003;", "class": "key gray backspace"}],
+    [{"label": "ABC", "class": "key gray letters-mode"}, {"label": "🌐", "class": "key gray lang-mode"}, {"char": "&#32;", "label": "space", "class": "key white space"}, {"label": "return", "class": "key gray return"}]
+  ],
+  "languages": {"en": "English (US)", "ru": "Russian"}
+}

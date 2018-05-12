@@ -56,6 +56,7 @@ button img{
     height: 55%;
 }
 button{
+    position: relative;
     font-family: HelveticaNeue;
     /*font-weight: 600;*/
     display: flex;
@@ -75,6 +76,11 @@ button{
     line-height: 16px;
     align-items: center;
 }
+button span ul{
+    display: none;
+    padding: 0;
+    list-style: none;
+}
 button.dark{
     background-color: rgb(171, 180, 189);
     max-width: 42px;
@@ -90,4 +96,65 @@ button.go {
 .full button {
     width: 100%;
     font-size: 16px;
+}
+button.hovered:hover span{
+    height: 70px;
+    background-color: white;
+    position: absolute;
+    bottom: 15px;
+    font-size: 0;
+    width: 33px;
+}
+
+button.hovered:hover span:after{
+    content: '';
+    /*background-color: red;*/
+    position: absolute;
+    bottom: 22px;
+    right: -8px;
+    width: 8px;
+    height: 8px;
+    display: block;
+    /*border: 1px solid #AAA;*/
+    border-top-left-radius: 4px;
+    /*border-width: 0 1px 1px 0;*/
+    box-shadow: -2px -2px 0 #FFF;
+}
+button.hovered:hover span:before{
+    content: '';
+    /*background-color: red;*/
+    position: absolute;
+    bottom: 22px;
+    left: -8px;
+    width: 8px;
+    height: 8px;
+    display: block;
+    /*border: 1px solid #AAA;*/
+    border-top-right-radius: 4px;
+    /*border-width: 0 0 1px 1px;*/
+    box-shadow: 2px -2px 0 #FFF;
+}
+button.hovered:hover span ul{
+    background-color: white;
+    display: flex;
+    border-top: 1px solid #aaaaaa;
+    border-left: 1px solid #aaaaaa;
+    border-right: 1px solid #aaaaaa;
+    position: absolute;
+    border-radius: 8px;
+    top:0;
+    right: -20px;
+    height: 40px;
+}
+button.hovered:hover span ul li{
+    font-size: 18px;
+    min-width: 33px;
+    margin: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+button.hovered:hover span ul li:hover{
+    background-color: #027cfe;
+    border-radius: 8px;
 }

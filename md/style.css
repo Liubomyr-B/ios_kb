@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: HelveticaNeue;
+    src: url('HelveticaNeueCyr-Medium.ttf');
+}
+
+.phone{
+    width: 375px;
+    height: 667px;
+    margin: auto;
+    position: relative;
+    margin-top: 20px;
+    border: 1px solid;
+}
+
+.keyboard{
+    padding-top: 3px;
+    position: absolute;
+    width: 100%;
+    min-height: 100px;
+    background-color: rgb(209, 212, 219);
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    /*justify-content: space-around;*/
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+.level2{
+    max-width: calc(100% - 40px);
+}
+.level3{
+    max-width: calc(100% - 80px);
+}
+
+.full{
+    width: 100%;
+}
+
+button span{
+    transform: scaleY(1.2);
+    /*padding-bottom: 1px;*/
+}
+button img{
+    max-width: 100%;
+    height: 55%;
+}
+button{
+    font-family: HelveticaNeue;
+    /*font-weight: 600;*/
+    display: flex;
+    padding-bottom: 2px;
+    background-color: #fffffe;
+    border-radius: 8px;
+    border: none;
+    border-bottom: 1.5px solid #9d9ca1;
+    height: 42px;
+    max-width: 33px;
+    min-width: 33px;
+    margin: 2.1px;
+    color: black;
+    outline: none;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 16px;
+    align-items: center;
+}
+button.dark{
+    background-color: rgb(171, 180, 189);
+    max-width: 42px;
+}
+button.space{
+    max-width: 100%;
+    font-size: 16px;
+}
+button.go {
+    max-width: 60px;
+    background-color: rgb(171, 180, 189);
+}
+.full button {
+    width: 100%;
+    font-size: 16px;
+}
